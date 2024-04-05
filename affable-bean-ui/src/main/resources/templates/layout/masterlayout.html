@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html th:fragment="layout(main)" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap/css/bootstrap.min.css"
+          th:href="@{/css/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../../static/css/bootstrap/css/app.css"
+          th:href="@{/css/bootstrap/css/app.css}">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <head>
+                <a th:href="@{/ui/home}">
+                    <img id="logo" src="../../static/images/logo.png" alt="logo" th:src="@{/images/logo.png}">
+                    <img id="logoText" src="../../static/images/logoText.png" alt="logoText" th:src="@{/images/logoText.png}">
+                    <img id="stalk" src="../../static/images/stalk.png" alt="stalk" th:src="@{/images/stalk.png}">
+                </a>
+            </head>
+        </div>
+    </section>
+    <section>
+        <div th:replace="${main}"></div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="container">
+        <h3>Checkout</h3>
+        <p>In order to purchase in your shopping cart, please provide us the information.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <form th:action="@{/ui/make-transaction}" method="post">
+                    <div class="row">
+                        <div class="col">Credit Cart :</div>
+                        <div class="col">
+                            <input type="text" name="accountNumber" class="form-control">
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit Purchase!">
+                </form>
+            </div>
+            <div class="col-md-6 p-3">
+                <div class="ul">
+                    <li>Next-day delivery is guaranteed.</li>
+                    <li>A $3.00 delivery supercharge is applied to all purchase orders.</li>
+                </div>
+                <div style="background-color: skyblue!important;padding: 10px!important; border-radius: 5px!important;">
+                    <div class="row">
+                        <div class="col">SubTotal</div>
+                        <div class="col" th:text="${'$' + totalPrice}"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Delivery Charge</div>
+                        <div class="col" th:text="${deliveryCharge}"></div>
+                    </div>
+                    <hr class="my-2">
+                    <div class="row">
+                        <div class="col">Total</div>
+                        <div class="col" th:text="${'$' + (totalPrice + deliveryCharge)}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

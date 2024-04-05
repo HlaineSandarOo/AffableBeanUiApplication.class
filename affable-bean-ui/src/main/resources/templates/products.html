@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+
+      </div>
+      <div class="col-md-2">
+        <h3>
+          <a th:href="@{/ui/view-cart}">
+            <img th:src="@{/images/cart.gif}" alt="image" style="width: 25px; height: 25px">
+            <span class="badge badge-success text-white" th:text="${cartSize}"></span>
+          </a>
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div style="background-color: rgba(245, 232, 160, 0.49);!important;" class="list-group p-3 text-center">
+          <a class="list-group-item mb-3 rounded text-muted" style="background-color: rgba(245, 232, 160, 0.49);!important; text-decoration: none!important;" th:href="@{'/ui/products?category=dairy'} ">Dairy</a>
+          <a class="list-group-item mb-3 rounded text-muted" style="background-color: rgba(245, 232, 160, 0.49);!important; text-decoration: none!important;" th:href="@{'/ui/products?category=fruit_veg'}">Fruits & Vegetables</a>
+          <a class="list-group-item mb-3 rounded text-muted" style="background-color: rgba(245, 232, 160, 0.49);!important; text-decoration: none!important;" th:href="@{'/ui/products?category=bakery'}">Bakery</a>
+          <a class="list-group-item mb-3 rounded text-muted" style="background-color: rgba(245, 232, 160, 0.49);!important; text-decoration: none!important;" th:href="@{'/ui/products?category=meats'}">Meats</a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="background-color: rgba(245, 232, 160, 0.49);!important;">
+              <table class="table table-striped rounded shadow">
+                <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="pro : ${products}">
+                  <td>
+                    <img th:src="@{'/images/products/' + ${pro.name} + '.png'}" alt="image">
+                  </td>
+                  <td th:text="${pro.name}"></td>
+                  <td th:text="${pro.price}"></td>
+                  <td><a th:href="@{'/ui/add-cart?id=' + ${pro.id}}" class="btn btn-outline-success">AddToCart</a></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

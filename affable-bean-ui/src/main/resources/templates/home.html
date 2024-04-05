@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Welcome to the online home of the Affable Bean Green Grocer.</h3>
+                <br>
+                <p class="lead">Enjoy browsing and learning more about our
+                    unique home delivery service bringing you fresh
+                    organic produce,dairy,meats,breads and other
+                    delicious and healthy items to you doorstep.</p>
+            </div>
+            <div class="col">
+                <div class="row mb-3">
+                    <div class="col">
+                        <a th:href="@{'/ui/products?category=dairy'}">
+                            <img class="img-fluid rounded" src="../static/images/categories/dairy.jpg" alt="diary"
+                                 th:src="@{/images/categories/dairy.jpg}">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a th:href="@{'/ui/products?category=fruit_veg'}">
+                            <img class="img-fluid rounded" src="../static/images/categories/fruit_veg.jpg" alt="fruits"
+                                 th:src="@{/images/categories/fruitveg.jpg}">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a th:href="@{'/ui/products?category=bakery'}">
+                            <img class="img-fluid rounded" src="../static/images/categories/bakery.jpg" alt="bakery"
+                                 th:src="@{/images/categories/bakery.jpg}">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a th:href="@{'/ui/products?category=meats'}">
+                            <img class="img-fluid rounded" src="../static/images/categories/meats.jpg" alt="meats"
+                                 th:src="@{/images/categories/meats.jpg}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

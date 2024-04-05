@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: payment-gateway
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/gateway
+    password: admin
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 8070
